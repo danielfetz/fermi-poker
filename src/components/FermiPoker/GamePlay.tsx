@@ -529,3 +529,5 @@ const GamePlay: React.FC = () => {
     </div>
   );
 };
+
+export default GamePlay;
