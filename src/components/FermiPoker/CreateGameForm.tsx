@@ -164,6 +164,7 @@ navigate(`/game/${game.id}`);
 } finally {
   setIsSubmitting(false);
 }
+   }; 
 
   return (
     <div className="max-w-3xl mx-auto p-4">
