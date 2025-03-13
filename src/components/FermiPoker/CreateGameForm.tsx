@@ -151,14 +151,19 @@ const CreateGameForm: React.FC = () => {
       }
       
       // Navigate to the game lobby
-      navigate(`/game/${game.id}`);
-    } catch (error) {
-      console.error('Error creating game:', error);
-      alert(`Error creating game: ${error.message}`);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+navigate(`/game/${game.id}`);
+} catch (error: unknown) {
+  console.error('Error creating game:', error);
+  
+  // TypeScript safe error handling
+  if (error instanceof Error) {
+    alert(`Error creating game: ${error.message}`);
+  } else {
+    alert(`Error creating game: ${String(error)}`);
+  }
+} finally {
+  setIsSubmitting(false);
+}
 
   return (
     <div className="max-w-3xl mx-auto p-4">
