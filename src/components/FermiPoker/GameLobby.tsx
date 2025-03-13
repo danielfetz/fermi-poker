@@ -250,3 +250,5 @@ const GameLobby: React.FC<GameLobbyProps> = ({ gameId }) => {
     </div>
   );
 };
+
+export default GameLobby;
