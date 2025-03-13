@@ -120,8 +120,8 @@ const CreateGameForm: React.FC = () => {
     
     try {
       // Create game
-      const { data: game, error: gameError } = await supabase.rpc('create_game', {
-        meta_game_on: metaGameOn
+      const { data: game, error: gameError } = await supabase.functions.invoke('create-game', { 
+        body: meta_game_on: metaGameOn
       });
       
       if (gameError) throw gameError;
