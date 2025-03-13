@@ -123,3 +123,5 @@ const GuessSubmission: React.FC<GuessSubmissionProps> = ({
     </div>
   );
 };
+
+export default GuessSubmission;
